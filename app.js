@@ -54,7 +54,9 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
     if (list) {
       const heading = document.createElement('p');
       heading.textContent = 'Esta canasta incluye:';
-      description.append(heading, list.cloneNode(true));
+      const contents = list.cloneNode(true);
+      contents.hidden = false;
+      description.append(heading, contents);
     }
     const note = section.querySelector('.catalog-note');
     if (note) {
@@ -74,7 +76,7 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
       trigger.className = 'product-open';
       trigger.setAttribute('aria-label', 'Ver detalle de ' + card.querySelector('h3').textContent);
       trigger.setAttribute('aria-haspopup', 'dialog');
-      trigger.innerHTML = '<span>Ver detalle <span aria-hidden="true">↗</span></span>';
+      trigger.innerHTML = '<span>Ver detalles <span aria-hidden="true">↗</span></span>';
       card.append(trigger);
       trigger.addEventListener('click', () => {
         cards = [...group.querySelectorAll('.product-card,.basket-card')];

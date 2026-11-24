@@ -151,3 +151,48 @@ body.detail-open{overflow:hidden}
 .payment-video{display:block;width:100%;max-width:420px;height:auto;max-height:none;object-fit:contain;margin:24px auto 0;border-radius:15px;background:#1d1027}
 .payment-naranja h3{color:#e66a22}
 @media(max-width:650px){.payment-promos{grid-template-columns:1fr;gap:20px}.payment-card{padding:23px 20px}.payment-card h3{font-size:27px}.payment-highlight strong{font-size:43px}.payment-source summary{font-size:15px;padding:12px 14px}}
+
+/* Rounded gold navigation and compact catalogs */
+.header-inner nav{gap:8px}
+.header-inner nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px;border:1px solid #efc44c;border-radius:999px;background:linear-gradient(135deg,#fff0a0,#eac04d);color:#72120d;font-size:15px;line-height:1.25;box-shadow:0 2px 5px #39040025;text-align:center}
+.header-inner nav a:hover{color:#63110d;background:linear-gradient(135deg,#fff4bd,#f6d56c);text-decoration:none}
+.header-inner nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.basket-content ul[hidden]{display:none}
+.basket-card h3{min-height:0;margin-bottom:17px}
+.basket-content{padding-top:19px}
+.basket-illustration{height:105px}
+.basket-illustration svg{height:75px}
+.basket-content .product-unit{font-size:11px}
+@media(max-width:850px){
+  .header-inner nav{gap:8px}
+  .header-inner nav a{padding:8px 12px;font-size:14px}
+  .basket-illustration{height:100%}
+  #panificados .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #panificados .product-card{padding:12px 10px 43px;border-radius:17px}
+  #panificados .product-photo{height:155px;padding:3px 2px 12px}
+  #panificados .product-brand{font-size:9px;letter-spacing:.6px;margin:2px 0 7px}
+  #panificados .product-card h3{font-size:20px;line-height:1.12;min-height:45px;margin-bottom:8px}
+  #panificados .product-presentation{font-size:13px;line-height:1.3;margin-bottom:12px}
+  #panificados .product-price{padding:10px 3px;border-radius:10px;gap:0}
+  #panificados .product-price .amount{font-size:34px;letter-spacing:-1px}
+  #panificados .product-price .currency{font-size:20px;margin-right:1px}
+  #panificados .product-price .cents{font-size:15px;margin-left:1px;padding-top:2px}
+  #panificados .product-unit{font-size:10px;line-height:1.3;margin-top:8px}
+  #panificados .product-open{font-size:12px;padding-bottom:12px;border-radius:17px}
+}
+@media(max-width:560px){
+  .basket-illustration{height:100px}
+  #panificados .product-photo{height:125px}
+  #panificados .product-card h3{font-size:18px;min-height:41px}
+  #panificados .product-price .amount{font-size:30px}
+  #panificados .product-price .currency{font-size:18px}
+  #panificados .product-price .cents{font-size:14px}
+}
+@media(max-width:360px){
+  #panificados .product-card{padding-left:7px;padding-right:7px}
+  #panificados .product-photo{height:110px}
+  #panificados .product-price .amount{font-size:26px}
+  #panificados .product-price .currency{font-size:16px}
+  #panificados .product-price .cents{font-size:12px}
+  #panificados .product-card h3{font-size:16px;min-height:36px}
+}
