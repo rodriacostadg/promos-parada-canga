@@ -153,9 +153,9 @@ body.detail-open{overflow:hidden}
 @media(max-width:650px){.payment-promos{grid-template-columns:1fr;gap:20px}.payment-card{padding:23px 20px}.payment-card h3{font-size:27px}.payment-highlight strong{font-size:43px}.payment-source summary{font-size:15px;padding:12px 14px}}
 
 /* Rounded gold navigation and compact catalogs */
-.header-inner nav{gap:8px}
-.header-inner nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 14px;border:1px solid #efc44c;border-radius:999px;background:linear-gradient(135deg,#fff0a0,#eac04d);color:#72120d;font-size:15px;line-height:1.25;box-shadow:0 2px 5px #39040025;text-align:center}
-.header-inner nav a:hover{color:#63110d;background:linear-gradient(135deg,#fff4bd,#f6d56c);text-decoration:none}
+.header-inner nav{gap:10px 22px}
+.header-inner nav a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:5px 0;border:0;border-radius:0;background:none;color:#f4d46b;font-size:16px;line-height:1.25;box-shadow:none;text-align:center}
+.header-inner nav a:hover{color:#fff0ae;background:none;text-decoration:underline;text-underline-offset:5px}
 .header-inner nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .basket-content ul[hidden]{display:none}
 .basket-card h3{min-height:0;margin-bottom:17px}
@@ -165,7 +165,7 @@ body.detail-open{overflow:hidden}
 .basket-content .product-unit{font-size:11px}
 @media(max-width:850px){
   .header-inner nav{gap:8px}
-  .header-inner nav a{padding:8px 12px;font-size:14px}
+  .header-inner nav a{padding:5px 0;font-size:14px}
   .basket-illustration{height:100%}
   #panificados .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   #panificados .product-card{padding:12px 10px 43px;border-radius:17px}
@@ -195,4 +195,32 @@ body.detail-open{overflow:hidden}
   #panificados .product-price .currency{font-size:16px}
   #panificados .product-price .cents{font-size:12px}
   #panificados .product-card h3{font-size:16px;min-height:36px}
+}
+
+/* Shorter bakery product cards, with full information in the detail view. */
+#panificados .product-card{padding:14px 14px 39px}
+#panificados .product-photo{height:185px;padding:3px 3px 12px}
+#panificados .product-card h3{font-size:23px;min-height:48px;margin-bottom:8px}
+#panificados .product-presentation{margin-bottom:12px}
+#panificados .product-unit{display:none}
+#panificados .product-open{padding-bottom:11px}
+@media(max-width:850px){
+ #panificados .product-card{padding:10px 9px 35px}
+ #panificados .product-photo{height:125px;padding:2px 2px 9px}
+ #panificados .product-brand{display:none}
+ #panificados .product-card h3{font-size:18px;min-height:41px;margin:2px 0 6px}
+ #panificados .product-presentation{font-size:12px;margin-bottom:10px}
+ #panificados .product-price{padding:8px 3px}
+ #panificados .product-open{padding-bottom:9px}
+}
+@media(max-width:560px){
+ #panificados .product-photo{height:105px}
+ #panificados .product-card h3{font-size:17px;min-height:38px}
+ #panificados .product-price .amount{font-size:29px}
+}
+@media(max-width:360px){
+ #panificados .product-card{padding-left:7px;padding-right:7px}
+ #panificados .product-photo{height:95px}
+ #panificados .product-card h3{font-size:15px;min-height:34px}
+ #panificados .product-price .amount{font-size:25px}
 }
