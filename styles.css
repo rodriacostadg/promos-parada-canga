@@ -131,3 +131,23 @@ body.detail-open{overflow:hidden}
 .detail-navigation button:focus-visible,.detail-close:focus-visible{outline:3px solid #153780;outline-offset:3px}
 @media(max-width:850px){.basket-card{padding-bottom:48px}.basket-card .product-open{padding-bottom:14px}}
 @media(max-width:600px){.product-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 20px);border-radius:22px}.detail-layout{grid-template-columns:1fr;min-height:0}.detail-visual{padding:32px 35px 22px;min-height:240px}.detail-visual>img{max-height:245px}.detail-content{padding:28px 23px 24px;position:static}.detail-content h2{font-size:29px}.detail-visual .basket-illustration{height:190px}.detail-close{top:10px;right:10px}.detail-price .product-price .amount{font-size:44px}.detail-navigation button{padding:12px 15px}}
+
+/* Payment benefits */
+.payment-promos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.payment-card{border:1px solid #dfbc65;border-radius:23px;background:linear-gradient(145deg,#fff5d5,#fffdfa 65%);padding:27px;min-width:0}
+.payment-day{font-size:11px;letter-spacing:1.3px;font-weight:700;color:#896426;margin:0 0 12px}
+.payment-card h3{font-size:29px;color:#153780;line-height:1.15;margin:0 0 20px}
+.payment-card>p:not(.payment-day):not(.payment-highlight){font-size:17px;color:#705643;line-height:1.5}
+.payment-highlight{color:#a61b0d;font-size:23px;line-height:1.2;margin:0 0 18px}
+.payment-highlight strong{display:block;font-size:47px;font-weight:700;letter-spacing:-1px;margin-bottom:5px}
+.payment-benefits{padding:17px 0 0 19px;border-top:1px solid #dfc98c;color:#6a503c;font-size:16px;margin:20px 0}
+.payment-benefits li{padding:0 0 13px 3px}.payment-benefits li::marker{color:#bc901f}
+.payment-condition{border-top:1px solid #dfc98c;padding-top:17px}
+.payment-source{margin-top:24px;border-top:1px solid #dfc98c;padding-top:16px}
+.payment-source summary{color:#9c210e;cursor:pointer;font-weight:700;font-size:15px;padding:4px 0}
+.payment-source summary:focus-visible{outline:3px solid #153780;outline-offset:4px}
+.payment-source img{display:block;width:100%;height:auto;margin-top:18px;border-radius:12px;border:1px solid #eadabb}
+.payment-source a:focus-visible{outline:3px solid #153780}
+.payment-video{display:block;width:100%;height:auto;max-height:440px;margin-top:20px;border-radius:15px;background:#1d1027}
+.payment-naranja h3{color:#e66a22}
+@media(max-width:650px){.payment-promos{grid-template-columns:1fr;gap:20px}.payment-card{padding:23px 20px}.payment-card h3{font-size:27px}.payment-highlight strong{font-size:43px}.payment-video{max-height:430px}}
