@@ -224,3 +224,23 @@ body.detail-open{overflow:hidden}
  #panificados .product-card h3{font-size:15px;min-height:34px}
  #panificados .product-price .amount{font-size:25px}
 }
+
+/* Choose a rotisserie before opening WhatsApp. */
+.rotisserie-order{background:#8e1109;padding:0 29px 27px;color:#fff}
+.rotisserie-order>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid #e7c85a;border-radius:14px;padding:15px 20px;background:linear-gradient(135deg,#fff0a0,#eac04d);color:#72120d;font-size:20px;line-height:1.3;font-weight:700;cursor:pointer}
+.rotisserie-order>summary::-webkit-details-marker{display:none}
+.rotisserie-order>summary>span{font-size:27px;line-height:1}
+.rotisserie-order[open]>summary>span{font-size:0}
+.rotisserie-order[open]>summary>span:after{content:"−";font-size:27px}
+.rotisserie-order>summary:hover{filter:brightness(1.04)}
+.rotisserie-order>summary:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.rotisserie-order-content>p{font-size:16px;color:#f4e3c6;margin:20px 0 17px}
+.rotisserie-branches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.rotisserie-whatsapp{display:flex;flex-direction:column;min-width:0;background:#fffaf0;color:#72120d;border:1px solid #e5c46d;border-radius:17px;padding:20px 17px;line-height:1.4}
+.rotisserie-branch-label{font-size:10px;letter-spacing:1px;font-weight:700;color:#856523;margin-bottom:9px}
+.rotisserie-whatsapp strong{font-size:21px;line-height:1.2;font-weight:700}
+.rotisserie-phone{font-size:13px;color:#7b6252;margin:12px 0 19px}
+.rotisserie-chat{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;background:#146b40;color:#fff;border-radius:10px;font-size:15px;font-weight:700;padding:11px 12px}
+.rotisserie-whatsapp:hover{background:#fff3ce}
+.rotisserie-whatsapp:focus-visible{outline:3px solid #fff;outline-offset:4px}
+@media(max-width:850px){.rotisserie-order{padding:0 22px 22px}.rotisserie-branches{grid-template-columns:1fr}.rotisserie-whatsapp{padding:19px}.rotisserie-whatsapp strong{font-size:22px}.rotisserie-order>summary{font-size:18px;padding:15px 16px}.rotisserie-phone{margin-bottom:14px}.rotisserie-chat{font-size:16px}}
