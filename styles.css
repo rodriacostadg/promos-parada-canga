@@ -244,3 +244,21 @@ body.detail-open{overflow:hidden}
 .rotisserie-whatsapp:hover{background:#fff3ce}
 .rotisserie-whatsapp:focus-visible{outline:3px solid #fff;outline-offset:4px}
 @media(max-width:850px){.rotisserie-order{padding:0 22px 22px}.rotisserie-branches{grid-template-columns:1fr}.rotisserie-whatsapp{padding:19px}.rotisserie-whatsapp strong{font-size:22px}.rotisserie-order>summary{font-size:18px;padding:15px 16px}.rotisserie-phone{margin-bottom:14px}.rotisserie-chat{font-size:16px}}
+
+/* Mobile navigation disclosure */
+.nav-toggle{display:none}
+@media(max-width:850px){
+ .header-inner{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:0;padding:16px 21px;min-height:88px}
+ .header-inner .brand{flex:0 0 auto}
+ .nav-toggle:not([hidden]){display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:46px;height:46px;flex:0 0 46px;padding:10px;border:1px solid #e6be5755;border-radius:11px;background:transparent;color:#f4d46b;cursor:pointer}
+ .nav-toggle span{display:block;width:23px;height:2px;border-radius:2px;background:currentColor}
+ .nav-toggle:focus-visible{outline:3px solid #fff0ae;outline-offset:4px}
+ .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+ .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+ .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+ .header-inner #primary-navigation{flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;gap:0;margin-top:15px;padding-top:9px;border-top:1px solid #e6be5755}
+ .header.nav-ready #primary-navigation{display:none}
+ .header.nav-ready.menu-open #primary-navigation{display:flex}
+ .header-inner #primary-navigation a{justify-content:flex-start;padding:12px 6px;min-height:46px;font-size:17px;border-bottom:1px solid #e6be5729}
+ .header-inner #primary-navigation a:last-child{border-bottom:0}
+}

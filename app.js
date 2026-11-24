@@ -107,3 +107,33 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
     opener?.focus({ preventScroll: true });
   });
 })();
+
+/* Accessible navigation disclosure on small screens. */
+(() => {
+ const header = document.querySelector('.header');
+ const toggle = header?.querySelector('.nav-toggle');
+ const nav = document.querySelector('#primary-navigation');
+ if (!header || !toggle || !nav) return;
+ const smallScreen = matchMedia('(max-width:850px)');
+ const setOpen = open => {
+   header.classList.toggle('menu-open', open);
+   toggle.setAttribute('aria-expanded', String(open));
+   toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+ };
+ toggle.hidden = false;
+ header.classList.add('nav-ready');
+ toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+ nav.addEventListener('click', event => {
+   if (event.target.closest('a')) setOpen(false);
+ });
+ header.addEventListener('keydown', event => {
+   if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+     setOpen(false);
+     toggle.focus();
+   }
+ });
+ document.addEventListener('click', event => {
+   if (smallScreen.matches && !header.contains(event.target)) setOpen(false);
+ });
+ smallScreen.addEventListener('change', () => setOpen(false));
+})();
