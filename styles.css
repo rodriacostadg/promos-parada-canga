@@ -30,3 +30,24 @@ h2{font-size:40px;line-height:1.12;letter-spacing:-.7px;margin:0;font-weight:700
 .footer{background:#420500;border-top:2px solid #e6b320;color:#fff}.footer-inner{max-width:1160px;margin:auto;padding:33px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:35px;font-size:15px}.footer strong{font-size:22px;letter-spacing:.5px}.footer p{color:#ead6bd;margin:5px 0 0;font-size:14px}.social>span{font-weight:700}.footer a{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:850px){.header-inner{flex-direction:column;gap:18px;padding:18px 20px}.brand{flex-basis:auto}.brand-image{width:160px}nav{justify-content:center;gap:9px 20px;font-size:15px}.campaign-strip{padding:0 21px;margin-top:18px;font-size:11px;gap:15px}.page{padding:0 21px 24px}.banner{padding:28px 0 38px}.banner h1{font-size:12px;letter-spacing:1.8px}.banner:before,.banner:after{display:none}.banner-description{font-size:16px;margin:12px 10px 22px}.campaign{margin-top:10px}.panel{padding:28px 24px;margin-bottom:30px;border-radius:26px}.section-heading{display:block}.section-heading>p{margin-top:15px;max-width:none;font-size:17px}.financing{grid-template-columns:1fr;gap:20px}.financing-brand{border:0;padding:0}.financing-brand h2{font-size:30px}h2{font-size:32px}.branches{display:block}.branch-access{margin-top:22px;max-width:none}.footer-inner{flex-wrap:wrap;gap:24px}.footer-inner>a{display:block}.placeholder{min-height:125px;padding:22px 15px}.placeholder span{font-size:20px}.placeholder p{font-size:15px}.eyebrow{font-size:11px}.festive-footer-art{height:150px;border-radius:0;background-size:auto 150px}.button{font-size:16px}.section-heading>div{padding-left:28px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Reusable product catalog cards */
+.catalog-preview{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 24px;font-size:15px;color:#725124}
+.catalog-preview>span{font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 9px;border:1px solid #d4aa3d;background:#fff1b6;border-radius:6px}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.product-card{display:flex;flex-direction:column;min-width:0;padding:19px;border-radius:22px;border:1px solid #dfb440;background:linear-gradient(155deg,#fff6c9 0%,#fffefa 45%,#fff 100%);box-shadow:0 5px 14px #7c330a0a}
+.product-photo{display:flex;align-items:center;justify-content:center;height:255px;padding:8px 4px 18px}
+.product-photo img{display:block;max-width:100%;width:auto;max-height:100%;height:auto;object-fit:contain}
+.product-info{flex:1}
+.product-brand{font-size:11px;letter-spacing:1.3px;font-weight:700;color:#997329;margin:5px 0 8px}
+.product-card h3{font-size:25px;line-height:1.1;color:#99190d;font-weight:700;margin:0 0 9px;min-height:55px}
+.product-presentation{font-size:16px;color:#725b4f;margin:0 0 22px}
+.product-price{display:flex;align-items:center;justify-content:center;gap:2px;white-space:nowrap;border-radius:15px;background:linear-gradient(150deg,#b4210f,#850b03);color:#fff000;padding:12px 7px;line-height:1;font-weight:700}
+.product-price .currency{font-size:30px;align-self:center;margin-right:2px}
+.product-price .amount{font-size:48px;letter-spacing:-1.5px}
+.product-price .cents{font-size:23px;align-self:flex-start;padding-top:3px;margin-left:2px}
+.product-unit{text-align:center;font-size:12px;color:#81675b;margin:10px 0 0}
+.catalog-note{font-size:13px;color:#806555;margin:21px 0 0}
+@media(min-width:851px) and (max-width:1050px){.product-card{padding:13px}.product-price .amount{font-size:40px}.product-price .currency{font-size:26px}.product-price .cents{font-size:19px}.product-photo{height:220px}.product-card h3{font-size:23px}}
+@media(max-width:850px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.product-card{padding:16px}.product-photo{height:235px}.product-card h3{font-size:24px;min-height:53px}.product-price .amount{font-size:44px}.product-price .currency{font-size:27px}.product-price .cents{font-size:22px}}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;gap:20px}.product-card{padding:22px}.product-photo{height:260px}.product-card h3{min-height:0;font-size:27px}.product-presentation{margin-bottom:20px}.product-price{padding:14px 10px}.product-price .amount{font-size:56px}.product-price .currency{font-size:33px}.product-price .cents{font-size:26px}.catalog-preview{font-size:14px;gap:8px}.catalog-note{font-size:12px}}
