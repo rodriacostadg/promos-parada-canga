@@ -137,3 +137,32 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
  });
  smallScreen.addEventListener('change', () => setOpen(false));
 })();
+
+/* Show the Christmas menu in batches of ten on phones and tablets. */
+(() => {
+ const list = document.querySelector('#christmas-dishes');
+ const controls = document.querySelector('.menu-pagination');
+ if (!list || !controls) return;
+ const items = [...list.children];
+ const button = controls.querySelector('.menu-more');
+ const count = controls.querySelector('.menu-count');
+ const mobile = matchMedia('(max-width:850px)');
+ let visible = 10;
+ const render = () => {
+   items.forEach((item, index) => {
+     item.hidden = mobile.matches && index >= visible;
+     if (item.hidden) item.querySelector('details')?.removeAttribute('open');
+   });
+   controls.hidden = !mobile.matches || items.length <= 10;
+   list.classList.toggle('is-paged', mobile.matches);
+   button.textContent = visible >= items.length ? 'Ver menos' : 'Ver más';
+   button.setAttribute('aria-expanded', String(visible > 10));
+   count.textContent = 'Mostrando ' + Math.min(visible, items.length) + ' de ' + items.length + ' platos';
+ };
+ button.addEventListener('click', () => {
+   visible = visible >= items.length ? 10 : Math.min(visible + 10, items.length);
+   render();
+ });
+ mobile.addEventListener('change', () => { visible = 10; render(); });
+ render();
+})();

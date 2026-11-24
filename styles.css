@@ -262,3 +262,29 @@ body.detail-open{overflow:hidden}
  .header-inner #primary-navigation a{justify-content:flex-start;padding:12px 6px;min-height:46px;font-size:17px;border-bottom:1px solid #e6be5729}
  .header-inner #primary-navigation a:last-child{border-bottom:0}
 }
+
+/* Expandable Christmas dishes and mobile batches. */
+.christmas-menu-columns{display:block}
+.christmas-menu-list.menu-dishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(13,auto);grid-auto-flow:column;column-gap:40px;align-items:start}
+.menu-dishes li.menu-dish{padding:0;border-bottom:1px solid #deceab99;overflow-wrap:anywhere}
+.menu-dishes li.menu-dish:before{display:none}
+.menu-dish-detail>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 4px;font-weight:700;font-size:18px;line-height:1.35;color:#942113;min-height:49px}
+.menu-dish-detail>summary::-webkit-details-marker{display:none}
+.menu-dish-detail>summary>span{font-size:22px;color:#b18929;flex-shrink:0}
+.menu-dish-detail[open]>summary>span{font-size:0}
+.menu-dish-detail[open]>summary>span:after{content:"−";font-size:22px}
+.menu-dish-detail>summary:hover{color:#671309;background:#f5e4b333}
+.menu-dish-detail>summary:focus-visible{outline:3px solid #153780;outline-offset:1px;border-radius:7px}
+.menu-dish-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px;padding:3px 2px 18px}
+.menu-dish-gallery img{display:block;width:100%;height:auto;object-fit:contain;border-radius:14px}
+.menu-photo-pending{grid-column:1/-1;font-weight:400;font-size:14px;line-height:1.5;color:#816c50;background:#fff6df;border:1px dashed #d9bd7d;border-radius:12px;padding:18px;margin:0}
+.menu-pagination{display:none}
+@media(max-width:850px){
+ .christmas-menu-list.menu-dishes{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row;gap:0}
+ .menu-dish-detail>summary{font-size:18px;padding:14px 2px}
+ .menu-dishes.is-paged>li[hidden]{display:none}
+ .menu-pagination:not([hidden]){display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:20px}
+ .menu-count{font-size:13px;color:#806346;margin:0}
+ .menu-more{font:700 16px Barlow,Arial,sans-serif;color:#7a160d;background:linear-gradient(#fff0a0,#eac04d);border:1px solid #dbb64f;border-radius:12px;min-height:46px;padding:12px 28px;width:100%;cursor:pointer}
+ .menu-more:focus-visible{outline:3px solid #153780;outline-offset:3px}
+}
