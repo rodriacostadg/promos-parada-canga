@@ -3,7 +3,7 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
 
 /* Each catalog opens its own accessible product gallery. */
 (() => {
-  const groups = [...document.querySelectorAll('.product-grid,.basket-grid')];
+  const groups = [...document.querySelectorAll('.product-grid,.basket-grid,.menu-dishes')];
   if (!groups.length) return;
   const dialog = document.createElement('dialog');
   dialog.className = 'product-dialog';
@@ -31,13 +31,34 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
   const render = () => {
     const card = cards[index];
     const section = card.closest('section');
-    const title = card.querySelector('h3').textContent;
+    const isDish = card.classList.contains('menu-dish');
+    const title = card.querySelector('h3')?.textContent || card.querySelector('.menu-dish-open').dataset.dishName;
+    dialog.classList.toggle('dish-dialog', isDish);
     find('#detail-title').textContent = title;
     find('.detail-category').textContent = section.querySelector('h2').textContent;
+    const dishContent = card.querySelector('.menu-dish-content')?.content;
+    const dishPhotos = dishContent?.querySelectorAll('.menu-dish-gallery img');
     const photo = card.querySelector('.product-photo img');
     const visual = find('.detail-visual');
     visual.replaceChildren();
-    if (photo) {
+    if (isDish) {
+      if (dishPhotos.length) {
+        const gallery = document.createElement('div');
+        gallery.className = 'dish-detail-photos';
+        for (const photo of dishPhotos) {
+          const image = photo.cloneNode(true);
+          image.loading = 'eager';
+          if (!image.alt) image.alt = title;
+          gallery.append(image);
+        }
+        visual.append(gallery);
+      } else {
+        const pending = document.createElement('p');
+        pending.className = 'dish-photo-pending';
+        pending.textContent = 'Próximamente, fotos de este plato.';
+        visual.append(pending);
+      }
+    } else if (photo) {
       const image = photo.cloneNode(true);
       image.loading = 'eager';
       visual.append(image);
@@ -45,11 +66,33 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
       const illustration = card.querySelector('.basket-illustration');
       if (illustration) visual.append(illustration.cloneNode(true));
     }
-    find('.detail-presentation').textContent = card.querySelector('.product-presentation')?.textContent || 'Canasta de 7 productos';
-    find('.detail-price').replaceChildren(card.querySelector('.product-price').cloneNode(true));
+    find('.detail-presentation').textContent = isDish ? 'Menú navideño · Rotisería Parada Canga' : (card.querySelector('.product-presentation')?.textContent || 'Canasta de 7 productos');
+    const price = card.querySelector('.product-price');
+    find('.detail-price').replaceChildren(...(price ? [price.cloneNode(true)] : []));
+    find('.detail-price').hidden = !price;
     find('.detail-unit').textContent = card.querySelector('.product-unit')?.textContent || '';
+    find('.detail-unit').hidden = isDish;
     const description = find('.detail-description');
     description.replaceChildren();
+    if (isDish) {
+      const recipe = dishContent.querySelector('.menu-dish-recipe');
+      if (recipe?.textContent.trim()) {
+        const heading = document.createElement('h3');
+        heading.textContent = 'Receta';
+        description.append(heading, recipe.cloneNode(true));
+      }
+      const orders = document.createElement('p');
+      orders.textContent = 'Tomamos pedidos hasta el 22 de diciembre. Consultá precios y disponibilidad en tu sucursal.';
+      const orderLink = document.createElement('a');
+      orderLink.className = 'button button-gold dish-order-link';
+      orderLink.href = '#pedido-rotiseria';
+      orderLink.textContent = 'Consultar y pedir por WhatsApp';
+      orderLink.addEventListener('click', () => {
+        dialog.close();
+        document.querySelector('#pedido-rotiseria').open = true;
+      });
+      description.append(orders, orderLink);
+    }
     const list = card.querySelector('.basket-content ul');
     if (list) {
       const heading = document.createElement('p');
@@ -70,16 +113,17 @@ for (const image of document.querySelectorAll('.brand-image,.naranja-image')) { 
   };
   const move = step => { index = (index + step + cards.length) % cards.length; render(); };
   for (const group of groups) {
-    for (const card of group.querySelectorAll('.product-card,.basket-card')) {
-      const trigger = document.createElement('button');
+    for (const card of group.querySelectorAll('.product-card,.basket-card,.menu-dish')) {
+      const trigger = card.querySelector('.menu-dish-open') || document.createElement('button');
       trigger.type = 'button';
-      trigger.className = 'product-open';
-      trigger.setAttribute('aria-label', 'Ver detalle de ' + card.querySelector('h3').textContent);
+      const isDish = card.classList.contains('menu-dish');
+      if (!isDish) trigger.className = 'product-open';
+      trigger.setAttribute('aria-label', 'Ver detalle de ' + (card.querySelector('h3')?.textContent || trigger.dataset.dishName));
       trigger.setAttribute('aria-haspopup', 'dialog');
-      trigger.innerHTML = '<span>Ver detalles <span aria-hidden="true">↗</span></span>';
-      card.append(trigger);
+      if (!isDish) trigger.innerHTML = '<span>Ver detalles <span aria-hidden="true">↗</span></span>';
+      if (!isDish) card.append(trigger);
       trigger.addEventListener('click', () => {
-        cards = [...group.querySelectorAll('.product-card,.basket-card')];
+        cards = [...group.querySelectorAll('.product-card,.basket-card,.menu-dish')];
         index = cards.indexOf(card);
         opener = trigger;
         render();

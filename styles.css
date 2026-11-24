@@ -288,3 +288,17 @@ body.detail-open{overflow:hidden}
  .menu-more{font:700 16px Barlow,Arial,sans-serif;color:#7a160d;background:linear-gradient(#fff0a0,#eac04d);border:1px solid #dbb64f;border-radius:12px;min-height:46px;padding:12px 28px;width:100%;cursor:pointer}
  .menu-more:focus-visible{outline:3px solid #153780;outline-offset:3px}
 }
+
+/* Christmas dishes use the same expanded view as the product catalog. */
+.menu-dish-open{display:flex;justify-content:space-between;align-items:center;gap:14px;width:100%;min-height:49px;padding:14px 4px;border:0;background:transparent;text-align:left;font:700 18px/1.35 Barlow,Arial,sans-serif;color:#942113;cursor:pointer}
+.menu-dish-open>span{font-size:21px;color:#b18929;flex-shrink:0}
+.menu-dish-open:hover{color:#671309;background:#f5e4b333}
+.menu-dish-open:focus-visible{outline:3px solid #153780;outline-offset:1px;border-radius:7px}
+.dish-dialog .detail-visual{min-height:300px}
+.dish-photo-pending{font-size:17px;line-height:1.5;color:#876b42;text-align:center;border:1px dashed #cdae6b;border-radius:17px;padding:35px 25px;background:#fff6df}
+.dish-detail-photos{display:grid;gap:18px;width:100%;align-content:center}
+.dish-detail-photos img{display:block;width:100%;height:auto;object-fit:contain;max-height:440px;border-radius:16px}
+.dish-dialog .detail-description h3{font-size:23px;margin:0 0 15px;color:#942113}
+.menu-dish-recipe{font-size:16px;line-height:1.65;margin-bottom:22px}
+.dish-order-link{margin-top:18px;font-size:15px}
+@media(max-width:600px){.dish-dialog .detail-visual{min-height:200px;padding:32px 25px}.dish-photo-pending{font-size:15px;padding:25px 20px}.menu-dish-open{padding:14px 2px}}
