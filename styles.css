@@ -69,3 +69,29 @@ h2{font-size:40px;line-height:1.12;letter-spacing:-.7px;margin:0;font-weight:700
 .christmas-menu-orders .button{white-space:nowrap;background:#ffe424;color:#841309;box-shadow:none}
 @media(max-width:850px){.christmas-menu-heading{padding:23px 21px;display:block}.christmas-menu h3{font-size:29px}.menu-season{display:block;text-align:left;margin-top:10px;font-size:14px}.christmas-menu-columns{padding:10px 21px 20px;gap:25px}.christmas-menu-list li{font-size:17px}.christmas-menu-orders{padding:22px;display:block}.christmas-menu-orders .button{margin-top:18px}.christmas-menu-orders strong{font-size:23px}}
 @media(max-width:560px){.christmas-menu-columns{grid-template-columns:1fr;gap:0}.christmas-menu-list:first-child li:last-child{border-bottom:1px solid #deceab99}.christmas-menu-list li{font-size:18px;padding:13px 0 13px 22px}.christmas-menu-list li:before{top:20px}.christmas-menu-orders .button{display:block;width:100%}.christmas-menu h3{font-size:28px}}
+
+/* Christmas basket proposals */
+.basket-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.basket-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid #dfb440;border-radius:23px;background:#fffdf6;min-width:0}
+.basket-illustration{position:relative;display:flex;align-items:center;justify-content:center;height:135px;background:linear-gradient(145deg,#fdf2cb,#fff);color:#204784;border-bottom:1px solid #ddbf7280}
+.basket-illustration svg{width:145px;height:95px}
+.basket-illustration>span{position:absolute;right:10px;top:10px;font-size:10px;letter-spacing:.7px;font-weight:700;color:#725322;border-radius:6px;background:#fff9e6;padding:3px 7px;border:1px solid #e5cc83}
+.basket-red .basket-illustration{color:#af2514;background:linear-gradient(145deg,#ffe6cb,#fff6e5)}
+.basket-gold .basket-illustration{color:#ba8d16;background:linear-gradient(145deg,#fff0a1,#fffadf)}
+.basket-content{padding:23px 18px 18px;display:flex;flex-direction:column;flex:1}
+.basket-card h3{font-size:27px;line-height:1.1;color:#962114;margin:0 0 23px;min-height:59px;font-weight:700}
+.basket-content ul{list-style:none;margin:0 0 23px;padding:0;flex:1}
+.basket-content li{position:relative;padding:10px 0 10px 17px;font-size:15px;line-height:1.45;color:#604739;border-bottom:1px solid #eee0bd}
+.basket-content li:before{content:"";position:absolute;left:1px;top:18px;width:5px;height:5px;border-radius:50%;background:#d4a52b}
+.basket-content li:last-child{border-bottom:0}
+.basket-price-label{text-align:center;font-size:12px;color:#8e6b42;margin:0 0 8px}
+.basket-content .product-price{padding:14px 5px;gap:0}
+.basket-content .product-price .amount{font-size:42px}
+.basket-content .product-price .currency{font-size:25px}
+.basket-content .product-price .cents{font-size:20px}
+.basket-consult{display:flex;justify-content:space-between;align-items:center;gap:25px;border-top:1px solid #dfc88e;margin-top:27px;padding-top:23px}
+.basket-consult p{max-width:650px;font-size:16px;color:#725440;line-height:1.5;margin:0}
+.basket-consult .button{white-space:nowrap}
+@media(min-width:851px) and (max-width:1050px){.basket-grid{gap:15px}.basket-content{padding:20px 12px 15px}.basket-content .product-price .amount{font-size:34px}.basket-content .product-price .currency{font-size:21px}.basket-content .product-price .cents{font-size:17px}.basket-card h3{font-size:24px}}
+@media(max-width:850px){.basket-grid{grid-template-columns:1fr}.basket-card{display:grid;grid-template-columns:155px 1fr}.basket-illustration{height:100%;border-bottom:0;border-right:1px solid #ddbf7280}.basket-content{padding:24px}.basket-card h3{min-height:0;margin-bottom:16px}.basket-content .product-price .amount{font-size:48px}.basket-content .product-price .currency{font-size:28px}.basket-content .product-price .cents{font-size:23px}.basket-consult{display:block}.basket-consult .button{margin-top:18px}}
+@media(max-width:560px){.basket-card{display:flex}.basket-illustration{height:130px;border-right:0;border-bottom:1px solid #ddbf7280}.basket-content{padding:23px 19px 18px}.basket-content li{font-size:16px}.basket-content .product-price .amount{font-size:45px}.basket-content .product-price .currency{font-size:27px}.basket-content .product-price .cents{font-size:22px}.basket-card h3{font-size:28px}.basket-consult .button{display:block;width:100%}}
