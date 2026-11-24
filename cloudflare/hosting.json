@@ -1,10 +1,11 @@
 {
-  "public_url": "https://promos-parada-canga.pages.dev",
+  "public_url": "https://cangapromos.pages.dev",
   "platform": "cloudflare-pages",
-  "project_name": "promos-parada-canga",
+  "project_name": "cangapromos",
   "production_branch": "main",
   "worker_source": "cloudflare/worker.mjs",
   "origin": "https://rodriacostadg.github.io/promos-parada-canga/",
   "deployment_mode": "Pages _worker.js with empty asset manifest; proxies the GitHub Pages site so content updates automatically",
-  "deployment_id": "7a0c0791-03ab-4356-8840-4c3d64ac5045"
+  "deployment_id": "866863e8-83e1-4cd7-b5d1-013f4a69c78d",
+  "alternative_url": "https://promos-parada-canga.pages.dev"
 }
