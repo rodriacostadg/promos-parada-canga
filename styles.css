@@ -302,3 +302,24 @@ body.detail-open{overflow:hidden}
 .menu-dish-recipe{font-size:16px;line-height:1.65;margin-bottom:22px}
 .dish-order-link{margin-top:18px;font-size:15px}
 @media(max-width:600px){.dish-dialog .detail-visual{min-height:200px;padding:32px 25px}.dish-photo-pending{font-size:15px;padding:25px 20px}.menu-dish-open{padding:14px 2px}}
+
+/* Compact meat catalog. */
+#carniceria .product-card{padding:14px 14px 43px}
+#carniceria .product-photo{height:185px;padding:3px 3px 12px}
+#carniceria .product-card h3{font-size:23px;min-height:48px;margin-bottom:8px}
+#carniceria .product-presentation{margin-bottom:12px}
+#carniceria .product-unit{margin-top:7px}
+@media(max-width:850px){
+ #carniceria .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ #carniceria .product-card{padding:10px 9px 35px}
+ #carniceria .product-photo{height:125px;padding:2px 2px 9px}
+ #carniceria .product-card h3{font-size:18px;min-height:41px;margin:2px 0 6px}
+ #carniceria .product-presentation{font-size:14px;margin-bottom:10px}
+ #carniceria .product-price{padding:8px 3px;gap:0;border-radius:10px}
+ #carniceria .product-price .amount{font-size:29px;letter-spacing:-1px}
+ #carniceria .product-price .currency{font-size:18px;margin-right:1px}
+ #carniceria .product-price .cents{font-size:14px;margin-left:1px;padding-top:2px}
+ #carniceria .product-open{font-size:12px;padding-bottom:9px}
+}
+@media(max-width:560px){#carniceria .product-photo{height:105px}#carniceria .product-card h3{font-size:17px;min-height:38px}}
+@media(max-width:390px){#carniceria .product-price .amount{font-size:23px}#carniceria .product-price .currency{font-size:15px}#carniceria .product-price .cents{font-size:12px}}
